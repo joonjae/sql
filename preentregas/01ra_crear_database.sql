@@ -85,3 +85,15 @@ CREATE TABLE IF NOT EXISTS Bobina (
     descripcion VARCHAR(80) NOT NULL,
     fecha_ingreso DATE NOT NULL
 );
+
+
+
+/*---------------------------CLAVES FORÁNEAS----------------------------*/
+
+-- Referencia: fk_agente_persona (tabla: agente)
+ALTER TABLE agente 
+ADD CONSTRAINT fk_agente_persona 
+FOREIGN KEY fk_agente_persona (cuil) 
+REFERENCES persona(cuil) 
+ON DELETE CASCADE ON UPDATE CASCADE;
+
