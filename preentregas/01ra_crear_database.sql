@@ -58,3 +58,30 @@ CREATE TABLE IF NOT EXISTS Movimiento (
     fecha_ejecucion DATE NOT NULL,
 );
 
+-- Tabla: Resistencia
+CREATE TABLE IF NOT EXISTS Resistencia (
+    id_producto VARCHAR(40) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
+    valor INT NOT NULL,
+    tolerancia INT NOT NULL,
+    potencia INT NOT NULL,
+    tipo VARCHAR(20) NOT NULL,
+    material VARCHAR(40) NOT NULL,
+    fabricante VARCHAR(40) NOT NULL,
+    descripcion VARCHAR(80) NOT NULL,
+    hoja_datos_link VARCHAR(40) NOT NULL,
+    fecha_ingreso DATE NOT NULL
+);
+
+-- Tabla: Bobina
+CREATE TABLE IF NOT EXISTS Bobina (
+    id_producto VARCHAR(40) NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
+    material VARCHAR(40) NOT NULL,
+    valor INT NOT NULL,
+    tolerancia INT NOT NULL,
+    tipo VARCHAR(20) NOT NULL,
+    fabricante VARCHAR(40) NOT NULL,
+    hoja_datos_link VARCHAR(40) NOT NULL,
+    resistencia_paracita VARCHAR(10) NOT NULL,
+    descripcion VARCHAR(80) NOT NULL,
+    fecha_ingreso DATE NOT NULL
+);
