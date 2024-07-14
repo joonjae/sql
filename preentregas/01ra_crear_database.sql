@@ -6,7 +6,7 @@ USE DBDeposito;
 
 -- Tabla: PERSONA
 CREATE TABLE IF NOT EXISTS PERSONA (
-    cuil INT UNSIGNED NOT NULL UNIQUE PRIMARY KEY,
+    cuil BIGINT UNSIGNED NOT NULL UNIQUE PRIMARY KEY,
     nombre VARCHAR(40) NOT NULL,
     apellido VARCHAR(40) NOT NULL,
     fecha_nacimiento DATE NOT NULL,
@@ -17,12 +17,13 @@ CREATE TABLE IF NOT EXISTS PERSONA (
 -- Tabla: AGENTE
 CREATE TABLE IF NOT EXISTS AGENTE (
     legajo INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    cuil INT UNSIGNED NOT NULL UNIQUE,
+    cuil BIGINT UNSIGNED NOT NULL UNIQUE,
     rol_ocupacion VARCHAR(20) NOT NULL,
     fecha_ingreso DATE NOT NULL,
     sector_trabajo VARCHAR(20) NOT NULL,
     tel_interno INT,
-    email VARCHAR(40) NOT NULL
+    email VARCHAR(40) NOT NULL,
+    nro_pedidos INT UNSIGNED NOT NULL
 );
 
 -- Tabla: PEDIDO
@@ -32,7 +33,7 @@ CREATE TABLE IF NOT EXISTS PEDIDO (
     nombre VARCHAR(40) NOT NULL,
     apellido VARCHAR(40) NOT NULL,
     fecha_solicitud DATE NOT NULL,
-    tipo_pedido VARCHAR(10) NOT NULL
+    tipo_pedido VARCHAR(20) NOT NULL
 );
 
 -- Tabla: LISTA_MATERIALES
@@ -64,7 +65,8 @@ CREATE TABLE IF NOT EXISTS MOVIMIENTO (
     legajo_supervisor INT UNSIGNED NOT NULL,
     nro_legajo_entrega INT UNSIGNED NOT NULL,
     ingreso_egreso VARCHAR(40) NOT NULL,
-    fecha_ejecucion DATE NOT NULL
+    fecha_ejecucion DATE NOT NULL,
+    id_pedido INT NOT NULL
 );
 
 -- Tabla: PRODUCTO
@@ -192,6 +194,13 @@ ALTER TABLE MOVIMIENTO
 ADD CONSTRAINT fk_movimiento_leg_agente_entrega
 FOREIGN KEY (nro_legajo_entrega) 
 REFERENCES AGENTE(legajo) 
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- Referencia: fk_movimiento_pedido (tabla: MOVIMIENTO)
+ALTER TABLE MOVIMIENTO
+ADD CONSTRAINT fk_movimiento_pedido
+FOREIGN KEY (id_pedido) 
+REFERENCES PEDIDO(id_pedido) 
 ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- *******************************************************************
