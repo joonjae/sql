@@ -18,9 +18,9 @@ CREATE TABLE IF NOT EXISTS PERSONA (
 CREATE TABLE IF NOT EXISTS AGENTE (
     legajo INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     cuil BIGINT UNSIGNED NOT NULL UNIQUE,
-    rol_ocupacion VARCHAR(20) NOT NULL,
+    rol_ocupacion VARCHAR(40) NOT NULL,
     fecha_ingreso DATE NOT NULL,
-    sector_trabajo VARCHAR(20) NOT NULL,
+    sector_trabajo VARCHAR(40) NOT NULL,
     tel_interno INT,
     email VARCHAR(40) NOT NULL,
     nro_pedidos INT UNSIGNED NOT NULL
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS PEDIDO (
     nombre VARCHAR(40) NOT NULL,
     apellido VARCHAR(40) NOT NULL,
     fecha_solicitud DATE NOT NULL,
-    tipo_pedido VARCHAR(20) NOT NULL
+    tipo_pedido VARCHAR(40) NOT NULL
 );
 
 -- Tabla: LISTA_MATERIALES
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS RESISTENCIA (
     valor INT NOT NULL,
     tolerancia INT NOT NULL,
     potencia INT NOT NULL,
-    tipo_smd_through_hole VARCHAR(20) NOT NULL,
+    tipo_smd_through_hole VARCHAR(40) NOT NULL,
     material VARCHAR(40) NOT NULL,
     fabricante VARCHAR(40) NOT NULL,
     descripcion VARCHAR(80) NOT NULL,
@@ -97,11 +97,11 @@ CREATE TABLE IF NOT EXISTS CAPACITOR (
     id_producto VARCHAR(40) NOT NULL,
     valor INT NOT NULL,
     tolerancia INT NOT NULL,
-    tipo_material VARCHAR(20) NOT NULL,
-    tipo_smd_through_hole VARCHAR(20) NOT NULL,
+    tipo_material VARCHAR(40) NOT NULL,
+    tipo_smd_through_hole VARCHAR(40) NOT NULL,
     hoja_datos_link VARCHAR(40) NOT NULL,
     fabricante VARCHAR(40) NOT NULL,
-    voltage VARCHAR(10) NOT NULL,
+    voltage VARCHAR(40) NOT NULL,
     fecha_ingreso DATE NOT NULL
 );
 
@@ -112,10 +112,10 @@ CREATE TABLE IF NOT EXISTS BOBINA (
     material VARCHAR(40) NOT NULL,
     valor INT NOT NULL,
     tolerancia INT NOT NULL,
-    tipo VARCHAR(20) NOT NULL,
+    tipo VARCHAR(40) NOT NULL,
     fabricante VARCHAR(40) NOT NULL,
     hoja_datos_link VARCHAR(40) NOT NULL,
-    resistencia_parasita VARCHAR(10) NOT NULL,
+    resistencia_parasita VARCHAR(40) NOT NULL,
     descripcion VARCHAR(80) NOT NULL,
     fecha_ingreso DATE NOT NULL
 );
@@ -125,10 +125,10 @@ CREATE TABLE IF NOT EXISTS TRANSISTOR (
     nro INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     id_producto VARCHAR(40) NOT NULL,
     tecnologia VARCHAR(40) NOT NULL,
-    tipo VARCHAR(20) NOT NULL,
+    tipo VARCHAR(40) NOT NULL,
     Vco INT NOT NULL,
-    Ic_max VARCHAR(10) NOT NULL,
-    tipo_smd_through_hole VARCHAR(20) NOT NULL,
+    Ic_max VARCHAR(40) NOT NULL,
+    tipo_smd_through_hole VARCHAR(40) NOT NULL,
     hoja_datos_link VARCHAR(40) NOT NULL,
     fabricante VARCHAR(40) NOT NULL,
     descripcion VARCHAR(80) NOT NULL,
@@ -141,12 +141,12 @@ CREATE TABLE IF NOT EXISTS IC_COMPUERTAS (
     id_producto VARCHAR(40) NOT NULL,
     tecnologia VARCHAR(40) NOT NULL,
     Vcc INT NOT NULL,
-    logica VARCHAR(20) NOT NULL,
+    logica VARCHAR(40) NOT NULL,
     descripcion VARCHAR(80) NOT NULL,
-    tipo_smd_through_hole VARCHAR(20) NOT NULL,
+    tipo_smd_through_hole VARCHAR(40) NOT NULL,
     hoja_datos_link VARCHAR(40) NOT NULL,
     fabricante VARCHAR(40) NOT NULL,
-    Io_max VARCHAR(10) NOT NULL,
+    Io_max VARCHAR(40) NOT NULL,
     fecha_ingreso DATE NOT NULL
 );
 
