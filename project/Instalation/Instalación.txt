@@ -1,0 +1,13 @@
+Instrucciones para instalar la base de datos del proyecto:
+1. Instala MySQL Workbench siguiendo las instrucciones proporcionadas.
+2. Abre MySQL Workbench e inicia sesión en el servidor de base de datos.
+3. Ejecuta los siguientes scripts (que está en la carpeta de SQL_files) en el orden indicado:
+	01_database_table.sql
+	02_insert_data.sql
+	03_visualization.sql
+	04_formato.sql
+	05_stored.sql
+	06_triggers.sql
+	07_sentencias.sql
+	08_TCL.sql
+4. Si es necesario, restaura la base de datos desde una copia de seguridad ejecutando el script 09_backup.sql.
