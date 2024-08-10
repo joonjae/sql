@@ -2,9 +2,9 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Proyecto Final
-- **Instalation**
-- **SQL_files**
+## [Proyecto Final]
+- **[Instalation]**
+- **[SQL_files]**
     * *[01_database_table.sql]*
     * *[02_insert_data.sql]*
     * *[03_visualization.sql]*
@@ -14,7 +14,7 @@
     * *[07_sentencias.sql]*
     * *[08_TCL.sql]*
     * *[09_backup.sql]*
-- **Documentation**
+- **[Documentation]**
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -149,3 +149,9 @@ El script deberá tener la inserción de datos de las tablas generadas hasta aho
 [Sentencias+Lee.sql]: https://github.com/joonjae/sql/blob/main/project/SQL_files/07_sentencias.sql
 [TCL+Lee.sql]: https://github.com/joonjae/sql/blob/main/project/SQL_files/08_TCL.sql
 [Backup+Lee.sql]: https://github.com/joonjae/sql/blob/main/project/SQL_files/09_backup.sql
+
+
+[Proyecto Final]: https://github.com/joonjae/sql/tree/main/project
+[Instalation]: https://github.com/joonjae/sql/tree/main/project/Instalation
+[SQL_files]: https://github.com/joonjae/sql/tree/main/project/SQL_files
+[Documentation]: https://github.com/joonjae/sql/tree/main/project/Documentation
